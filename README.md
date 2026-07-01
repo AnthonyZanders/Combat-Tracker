@@ -1,3 +1,5 @@
+# Coding project #1 - Combat-Training-Tracker
+
 ## Description: 
 Combat-Training-tracker is a web app, aimed to target users who train all types of combat training sports (MMA, wrestling, BJJ, etc.) (still need to think of a better title, but this will have to do), that allows you to track your training, lifting progress, nutrition, and body weight. 
 
