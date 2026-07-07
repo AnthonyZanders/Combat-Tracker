@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TestingHello {
-    @GetMapping("/hello")
+    @GetMapping("/")
     public String hello(){
         return "Our combat tracking application is running!";
     }
