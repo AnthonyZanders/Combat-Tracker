@@ -1,10 +1,9 @@
 package com.backend.combattracker.controller;
 
 import com.backend.combattracker.entity.TrainingSession;
+import com.backend.combattracker.repository.TrainingSessionRepository;
 import com.backend.combattracker.service.TrainingSessionService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,9 +24,15 @@ public class TrainingSessionController {
 
     }
 
-    /* This is used to get all of the current training sessions. At the momment, theres 0 sessions but after creating one, it should appear when running the application. */
+    /* This is used to get all of the current training sessions. At the moment, there's 0 sessions but after creating one, it should appear when running the application. */
     @GetMapping
     public List<TrainingSession> getAllTrainingSessions () {
         return trainingSessionService.getAllTrainingSessions();
+    }
+
+    /* This is used to save a new training session. */
+    @PostMapping
+    public TrainingSession saveTrainingSession ( @RequestBody TrainingSession trainingSession) {
+        return trainingSessionService.saveTrainingSession(trainingSession);
     }
 }
