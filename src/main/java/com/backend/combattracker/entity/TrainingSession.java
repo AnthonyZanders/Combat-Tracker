@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class TrainingSession {
     //Used as a primary key
     @Id
-    //MySQl will generate ID's on its own. 
+    //MySQl will generate ID's on its own.
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
