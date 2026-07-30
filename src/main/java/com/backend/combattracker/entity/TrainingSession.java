@@ -15,7 +15,7 @@ public class TrainingSession {
     private String martialArt;
     private LocalDate trainingDate;
     private int duration;
-    private String TechniqueWorkedOn;
+    private String techniqueWorkedOn;
     private String notes;
 
     public TrainingSession() {
@@ -44,10 +44,10 @@ public class TrainingSession {
         this.duration = duration;
     }
     public String getTechniqueWorkedOn (){
-        return TechniqueWorkedOn;
+        return techniqueWorkedOn;
     }
     public void setTechniqueWorkedOn (String techniqueWorkedOn) {
-        this.TechniqueWorkedOn = techniqueWorkedOn;
+        this.techniqueWorkedOn = techniqueWorkedOn;
     }
 
     public String getNotes () {
