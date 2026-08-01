@@ -35,4 +35,10 @@ public class TrainingSessionController {
     public TrainingSession saveTrainingSession ( @RequestBody TrainingSession trainingSession) {
         return trainingSessionService.saveTrainingSession(trainingSession);
     }
+
+    @PutMapping ("/{id}")
+    public TrainingSession updateTrainingSession( @PathVariable long id, @RequestBody TrainingSession trainingSession) {
+        trainingSessionService.editTrainingSession(id, trainingSession);
+        return trainingSession;
+    }
 }
