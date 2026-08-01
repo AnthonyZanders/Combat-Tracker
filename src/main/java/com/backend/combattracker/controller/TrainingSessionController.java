@@ -36,9 +36,16 @@ public class TrainingSessionController {
         return trainingSessionService.saveTrainingSession(trainingSession);
     }
 
+    /* This will be used to update current trainingsessions if the user wishes too. */
     @PutMapping ("/{id}")
-    public TrainingSession updateTrainingSession( @PathVariable long id, @RequestBody TrainingSession trainingSession) {
+    public TrainingSession updateTrainingSession( @PathVariable Long id, @RequestBody TrainingSession trainingSession) {
         trainingSessionService.editTrainingSession(id, trainingSession);
         return trainingSession;
+    }
+
+    /* This will be used to delete a training session if the user wishes too. */
+    @DeleteMapping ("/{id}")
+    public void deleteTrainingSession(@PathVariable Long id){
+        trainingSessionService.deleteTrainingSession(id);
     }
 }
