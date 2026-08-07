@@ -1,6 +1,7 @@
 package com.backend.combattracker.service;
 
 import com.backend.combattracker.entity.TrainingSession;
+import com.backend.combattracker.exception.TrainingSessionNotFound;
 import com.backend.combattracker.repository.TrainingSessionRepository;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +28,7 @@ public class TrainingSessionService {
 
     //Method that will be used to edit users training sessions if sessions are not correct.
     public void editTrainingSession(Long id, TrainingSession updateSession){
-        TrainingSession existingSession = repository.findById(id).orElseThrow(() -> new RuntimeException ("Cannot find the typed out id:" + id));
+        TrainingSession existingSession = repository.findById(id).orElseThrow(() -> new TrainingSessionNotFound("Training session with the ID" + id + " cannot be found."));
 
         existingSession.setMartialArt(updateSession.getMartialArt());
         existingSession.setTrainingDate(updateSession.getTrainingDate());
@@ -38,7 +39,11 @@ public class TrainingSessionService {
         repository.save(existingSession);
     }
 
+    /* Method simply will delete any training sessio by the users id */
     public void deleteTrainingSession(Long id){
+        if (id == null || !repository.existsById(id)){
+            throw new TrainingSessionNotFound("Training session with the ID " + id + " cannot be found.");
+        }
         repository.deleteById(id);
     }
 
