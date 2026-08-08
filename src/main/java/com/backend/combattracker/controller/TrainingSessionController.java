@@ -48,4 +48,9 @@ public class TrainingSessionController {
     public void deleteTrainingSession(@PathVariable Long id){
         trainingSessionService.deleteTrainingSession(id);
     }
+
+    @GetMapping("/{id}")
+    public TrainingSession getTrainingSessionById (@PathVariable Long id){
+        return trainingSessionService.getTrainingSessionById(id);
+    }
 }

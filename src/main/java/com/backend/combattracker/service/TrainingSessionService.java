@@ -47,6 +47,8 @@ public class TrainingSessionService {
         repository.deleteById(id);
     }
 
-
+    public TrainingSession getTrainingSessionById (Long id){
+        return repository.findById(id).orElseThrow(() -> new TrainingSessionNotFound("Training session with the ID " + id + " cannot be found."));
+    }
 
 }
